@@ -6,6 +6,35 @@ https://bitcoincore.org
 For an immediately usable, binary version of the Bitcoin Core software, see
 https://bitcoincore.org/en/download/.
 
+## Bitcoin Core Rust Migration Analysis
+
+This repository contains a comprehensive analysis of migrating Bitcoin Core from C++ to Rust. After an extensive architectural review examining all 8 major subsystems (~320K lines of code), we evaluated migration strategies for both Go and Rust languages.
+
+**Key Findings:**
+- **Architecture Analysis**: Detailed examination of consensus validation, networking, mempool, storage, RPC, wallet, mining, and GUI subsystems
+- **Language Comparison**: Comprehensive evaluation of Go vs Rust for Bitcoin Core requirements
+- **Final Recommendation**: **Rust** selected as the optimal choice due to zero-cost abstractions, memory safety without garbage collection, and superior performance characteristics critical for consensus-critical systems
+- **Migration Strategy**: 72-month phased migration plan with detailed work breakdown structure and project management framework
+
+### Analysis Documentation
+
+The complete analysis is available in the [`ai_docs/`](ai_docs/) directory:
+
+- **[Architecture Overview](ai_docs/bitcoin-architecture-overview.md)** - Comprehensive technical analysis of Bitcoin Core's 8 major subsystems
+- **[Architecture Diagrams](ai_docs/architecture-diagrams.md)** - Visual system diagrams and component interactions
+- **[Detailed Flow Diagrams](ai_docs/detailed-flow-diagrams.md)** - Process flows, state machines, and data flows
+- **[System Integration Diagrams](ai_docs/system-integration-diagrams.md)** - Complete system-level integration views
+- **[Rust Migration Plan](ai_docs/rust-migration-plan.md)** - Comprehensive 72-month Rust migration strategy
+- **[Go Migration Plan](ai_docs/go-migration-plan.md)** - Complete Go migration approach for comparison
+- **[Language Comparison](ai_docs/language-comparison-analysis.md)** - Detailed Go vs Rust analysis across 8 critical factors
+- **[Final Recommendation](ai_docs/final-recommendation.md)** - Executive recommendation with comprehensive justification
+- **[Project Framework](ai_docs/rust-migration-project-framework.md)** - Complete project planning and execution framework
+- **[Work Breakdown Structure](ai_docs/detailed-work-breakdown-structure.md)** - Detailed task breakdown for systematic implementation
+- **[Task Templates](ai_docs/task-specification-templates.md)** - Standardized templates for task specification and execution
+- **[Team Structure](ai_docs/project-management-team-structure.md)** - Project management approach and organizational structure
+
+**Executive Summary**: Rust emerges as the clear choice for Bitcoin Core migration, offering memory safety without garbage collection overhead, deterministic behavior essential for consensus systems, and performance characteristics that can match or exceed C++. The migration would require 40-60 engineers over 6 years with an estimated budget of $26-39M, but would result in a more secure, maintainable, and performant Bitcoin Core implementation.
+
 What is Bitcoin Core?
 ---------------------
 
